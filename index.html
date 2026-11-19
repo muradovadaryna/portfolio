@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============================================================
+       SEO & SHARING
+       Replace assets/images/og-image.jpg with a 1200x630 image.
+       ============================================================ -->
+  <title>Daryna Muradova · Creative Producer</title>
+  <meta name="description" content="Creative producer based in Slovenia, creating video, AI visuals and social media content for the digital-first world.">
+  <meta name="theme-color" content="#0B0B0C">
+  <meta name="author" content="Daryna Muradova">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daryna Muradova · Creative Producer">
+  <meta property="og:description" content="Creative producer based in Slovenia, creating video, AI visuals and social media content for the digital-first world.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:locale" content="en_GB">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daryna Muradova · Creative Producer">
+  <meta name="twitter:description" content="Creative producer based in Slovenia, creating video, AI visuals and social media content for the digital-first world.">
+  <meta name="twitter:image" content="assets/images/og-image.jpg">
+
+  <!-- Favicon: replace assets/images/favicon.svg with your own -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Marks that JavaScript is running (used to show the preloader and hide
+       elements before they animate in). Without JS the page simply shows everything. -->
+  <script>document.documentElement.classList.add('js', 'is-loading');</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative layers -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i class="progress__bar"></i></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <p class="preloader__name"><span>Daryna <em>Muradova</em></span></p>
+      <p class="preloader__count"><span class="preloader__num">000</span></p>
+    </div>
+    <i class="preloader__line"></i>
+  </div>
+
+  <!-- ==============================================================
+       HEADER / NAVIGATION
+       ============================================================== -->
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="#top" data-magnetic aria-label="Daryna Muradova — back to top">Daryna Muradova</a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#work" data-nav="work" data-magnetic>Work</a></li>
+          <li><a class="nav__link" href="#about" data-nav="about" data-magnetic>About</a></li>
+          <li><a class="nav__link" href="#contact" data-nav="contact" data-magnetic>Contact</a></li>
+        </ul>
+        <!-- CV link: put your PDF at assets/cv/Daryna_Muradova_CV.pdf -->
+        <a class="pill" href="assets/cv/Daryna_Muradova_CV.pdf" download data-link="cv" data-magnetic>Download CV</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen menu -->
+  <div class="menu" id="menu" aria-hidden="true" inert>
+    <nav class="container menu__inner" aria-label="Mobile">
+      <ul class="menu__list">
+        <li><a class="menu__link" href="#work"><span>Work</span></a></li>
+        <li><a class="menu__link" href="#about"><span>About</span></a></li>
+        <li><a class="menu__link" href="#contact"><span>Contact</span></a></li>
+        <li><a class="menu__link" href="assets/cv/Daryna_Muradova_CV.pdf" download data-link="cv"><span>Download <em>CV</em></span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         (01) HERO
+         ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__blob hero__blob--1"></span>
+        <span class="hero__blob hero__blob--2"></span>
+        <span class="hero__blob hero__blob--3"></span>
+        <!-- Optional looping background video: set SITE.heroVideo in js/main.js -->
+        <video class="hero__video" muted loop playsinline preload="none" tabindex="-1"></video>
+        <span class="hero__shade"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <h1 class="hero__title" id="hero-title" data-split="hero">Creative production for the <em>digital-first</em> world.</h1>
+
+        <div class="hero__foot grid">
+          <p class="hero__sub" data-hero-fade>Five years of turning ideas into finished, multi-platform content.</p>
+          <p class="hero__tags label" data-hero-fade>
+            <a href="#video">VIDEO PRODUCTION</a><span aria-hidden="true"> · </span><a href="#ai">AI CREATIVES</a><span aria-hidden="true"> · </span><a href="#social">SOCIAL MEDIA DESIGNS</a>
+          </p>
+          <div class="hero__cta" data-hero-fade>
+            <a class="btn" href="#work" data-magnetic>
+              <span class="btn__text">See the work</span>
+              <svg class="btn__arrow" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0v12M1 7l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true" data-hero-fade>
+        <span class="label">Scroll</span>
+        <i class="scroll-cue__line"></i>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (02) NUMBERS
+         ============================================================ -->
+    <section class="section numbers" id="numbers" aria-labelledby="numbers-label">
+      <div class="container">
+        <h2 class="section-label" id="numbers-label" data-reveal><span>(02)</span> Numbers</h2>
+        <ul class="stats">
+          <li class="stat" data-reveal>
+            <p class="stat__num"><span data-count="5">5</span>+</p>
+            <p class="stat__label label">years in creative production</p>
+          </li>
+          <li class="stat" data-reveal>
+            <p class="stat__num"><span data-count="200">200</span>+</p>
+            <p class="stat__label label">videos produced</p>
+          </li>
+          <li class="stat" data-reveal>
+            <p class="stat__num"><span data-count="300">300</span>+</p>
+            <p class="stat__label label">social media graphics</p>
+          </li>
+          <li class="stat" data-reveal>
+            <p class="stat__num"><span data-count="100">100</span>+</p>
+            <p class="stat__label label">influencer collaborations</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (03) WORK
+         Projects are NOT written here. They are generated from the
+         PROJECTS list at the top of js/main.js.
+         ============================================================ -->
+    <section class="section work" id="work" aria-labelledby="work-label">
+      <div class="container">
+        <h2 class="section-label" id="work-label" data-reveal><span>(03)</span> Work</h2>
+
+        <!-- A) VIDEO PRODUCTION -->
+        <div class="work-block" id="video">
+          <div class="work-head grid">
+            <p class="work-head__index label" data-reveal>A</p>
+            <h3 class="work-head__title" data-split>Video <em>Production</em></h3>
+            <p class="work-head__intro" data-reveal>Attention-holding videos built for every screen, story and campaign.</p>
+          </div>
+
+          <div class="ratio-switch" role="group" aria-label="Video aspect ratio" data-reveal>
+            <span class="ratio-switch__thumb" aria-hidden="true"></span>
+            <button type="button" class="ratio-switch__btn" data-ratio="16:9" aria-pressed="true">16:9</button>
+            <button type="button" class="ratio-switch__btn" data-ratio="1:1" aria-pressed="false">1:1</button>
+            <button type="button" class="ratio-switch__btn" data-ratio="9:16" aria-pressed="false">9:16</button>
+          </div>
+
+          <div class="card-grid card-grid--video" data-grid="video" data-ratio="16:9"></div>
+        </div>
+
+        <!-- B) AI CREATIVES -->
+        <div class="work-block" id="ai">
+          <div class="work-head grid">
+            <p class="work-head__index label" data-reveal>B</p>
+            <h3 class="work-head__title" data-split>AI <em>Creatives</em></h3>
+            <p class="work-head__intro" data-reveal>Eye-catching AI visuals for ideas no camera could capture.</p>
+          </div>
+
+          <div class="card-grid card-grid--ai" data-grid="ai"></div>
+        </div>
+      </div>
+
+      <!-- C) SOCIAL MEDIA DESIGNS (full-width horizontal gallery) -->
+      <div class="work-block social" id="social">
+        <div class="social__viewport">
+          <div class="social__track">
+            <div class="work-head social__head">
+              <p class="work-head__index label" data-reveal>C</p>
+              <h3 class="work-head__title" data-split>Social Media <em>Designs</em></h3>
+              <p class="work-head__intro" data-reveal>Scroll-stopping creatives for every feed, format and audience.</p>
+            </div>
+            <div class="social__phones" data-grid="social"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (04) HOW I WORK
+         ============================================================ -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <p class="section-label" data-reveal><span>(04)</span> How I work</p>
+        <h2 class="section-title" id="process-title" data-split>Creative thinking, project management <em>discipline.</em></h2>
+
+        <div class="steps">
+          <div class="steps__line" aria-hidden="true"><i class="steps__progress"></i></div>
+          <ol class="steps__list">
+            <li class="step" data-reveal>
+              <span class="step__dot" aria-hidden="true"></span>
+              <span class="step__num">01</span>
+              <h3 class="step__name">Brief</h3>
+              <p class="step__text">Goals, audience, platforms.</p>
+            </li>
+            <li class="step" data-reveal>
+              <span class="step__dot" aria-hidden="true"></span>
+              <span class="step__num">02</span>
+              <h3 class="step__name">Concept</h3>
+              <p class="step__text">Scripts, storyboards, references.</p>
+            </li>
+            <li class="step" data-reveal>
+              <span class="step__dot" aria-hidden="true"></span>
+              <span class="step__num">03</span>
+              <h3 class="step__name">Production</h3>
+              <p class="step__text">Filming, AI generation, editing, design.</p>
+            </li>
+            <li class="step" data-reveal>
+              <span class="step__dot" aria-hidden="true"></span>
+              <span class="step__num">04</span>
+              <h3 class="step__name">Delivery</h3>
+              <p class="step__text">Every format, on time.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (05) ABOUT
+         Portrait: put your photo at assets/images/portrait.jpg
+         ============================================================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="section-label" data-reveal><span>(05)</span> About</p>
+        <div class="about__grid grid">
+          <h2 class="section-title about__title" id="about-title" data-split>Different industries. Different audiences. Same eye for <em>detail.</em></h2>
+          <div class="about__body">
+            <p class="about__text" data-scrub-words>I'm Daryna, a creative producer based in Slovenia. Five years of creating video, design and social content across fashion, tech, media, events and beyond, now with AI tools as part of the process. With a background in project management, I handle timelines, teams and budgets as carefully as the creative itself.</p>
+            <figure class="portrait" data-reveal>
+              <div class="portrait__frame">
+                <span class="ph" aria-hidden="true"><span class="ph__label">assets/images/portrait.jpg</span></span>
+                <img class="portrait__img" data-src="assets/images/portrait.jpg" alt="Portrait of Daryna Muradova" decoding="async">
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (06) TOOLKIT
+         Edit the tools in the TOOLKIT list in js/main.js
+         ============================================================ -->
+    <section class="section toolkit" id="toolkit" aria-labelledby="toolkit-label">
+      <div class="container">
+        <h2 class="section-label" id="toolkit-label" data-reveal><span>(06)</span> Toolkit</h2>
+        <p class="visually-hidden" data-toolkit-text>Adobe Creative Suite · Figma · CapCut · Higgsfield · ElevenLabs · Claude Code</p>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         (07) CONTACT
+         Change email / LinkedIn / Instagram in SITE at the top of js/main.js
+         ============================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="section-label" data-reveal><span>(07)</span> Contact</p>
+        <h2 class="contact__title" id="contact-title" data-split>Got something to show the <em>world?</em></h2>
+        <p class="contact__sub" data-reveal>Let's make sure it gets seen.</p>
+
+        <div class="contact__grid grid">
+          <ul class="contact__links">
+            <li data-reveal>
+              <!-- REPLACE: email (also in SITE.email in js/main.js) -->
+              <a class="contact__email" href="mailto:hello@example.com" data-link="email" data-cursor="Send">
+                <span class="contact__email-text" data-link-text="email">hello@example.com</span>
+              </a>
+            </li>
+            <li class="contact__row" data-reveal>
+              <!-- REPLACE: LinkedIn URL (also in SITE.linkedin in js/main.js) -->
+              <a class="link" href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" data-link="linkedin" data-magnetic>LinkedIn</a>
+              <a class="link" href="assets/cv/Daryna_Muradova_CV.pdf" download data-link="cv" data-magnetic>Download CV</a>
+            </li>
+          </ul>
+
+          <div class="contact__details label" data-reveal>
+            <p>Based in Slovenia · Open to relocate</p>
+            <p>English · Slovenian · Ukrainian · Russian</p>
+            <p class="contact__time" data-clock>Ljubljana — <time>--:--</time></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================
+       FOOTER
+       ============================================================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="label">© 2026 Daryna Muradova · <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" data-link="linkedin">LinkedIn</a> · <a href="https://instagram.com/your-handle" target="_blank" rel="noopener" data-link="instagram">Instagram</a></p>
+      <a class="label back-top" href="#top" data-magnetic>Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- Lightbox (project viewer) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__inner">
+      <div class="lightbox__top">
+        <span class="label lightbox__count"></span>
+        <button class="lightbox__close" type="button" aria-label="Close project" data-lightbox-close>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.2"/></svg>
+        </button>
+      </div>
+      <div class="lightbox__stage"></div>
+      <div class="lightbox__bar">
+        <div>
+          <h2 class="lightbox__title" id="lightbox-title"></h2>
+          <p class="label lightbox__meta"></p>
+        </div>
+        <div class="lightbox__nav">
+          <button type="button" class="lightbox__arrow" data-lightbox-prev aria-label="Previous project">
+            <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M20 6H2M7 1L2 6l5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </button>
+          <button type="button" class="lightbox__arrow" data-lightbox-next aria-label="Next project">
+            <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18M13 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast label" role="status" aria-live="polite"></div>
+
+  <!-- Libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
