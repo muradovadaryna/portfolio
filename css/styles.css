@@ -827,12 +827,11 @@ em { font-style: italic; }
 
 @media (min-width: 768px) {
   .card-grid--video[data-ratio="16:9"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .card-grid--video[data-ratio="16:9"] .card:first-child { grid-column: 1 / -1; }
   .card-grid--video[data-ratio="1:1"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .card-grid--video[data-ratio="9:16"] { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 960px; }
 }
 @media (min-width: 1024px) {
-  .card-grid--video[data-ratio="16:9"] .card:first-child { grid-column: 1 / -1; }
+  .card-grid--video[data-ratio="16:9"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .card-grid--video[data-ratio="1:1"] { max-width: 1180px; }
 }
 
