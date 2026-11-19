@@ -28,7 +28,8 @@
    type         'video' or 'image'
    src          Path to the file, e.g. 'assets/projects/01/hero-film.mp4'
    poster       (videos) still image shown before the video plays
-   ratio        Shape of the file: '16:9', '9:16', '1:1', '4:5', '4:3' …
+   ratio        Shape of the file: '9:16', '4:5', '1:1', '16:9', '4:3' …
+                Any mix works — items keep their own shape in the strip.
    phone        true → shows the item inside a phone frame (great for 9:16)
    caption      Small line under the item, e.g. 'Campaign film'
    prompt       (AI images) adds a "Prompt" button that reveals this text
@@ -50,14 +51,14 @@ const PROJECTS = [
     tags: ['Video', 'AI', 'Social'],
     description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
     items: [
-      { type: 'video', src: 'assets/projects/01/campaign-film.mp4', poster: 'assets/projects/01/campaign-film.jpg', ratio: '16:9', caption: 'Campaign film' },
+      { type: 'video', src: 'assets/projects/01/campaign-video.mp4', poster: 'assets/projects/01/campaign-video.jpg', ratio: '9:16', phone: true, caption: 'Campaign video' },
       { type: 'video', src: 'assets/projects/01/reel.mp4', poster: 'assets/projects/01/reel.jpg', ratio: '9:16', phone: true, caption: 'Instagram reel' },
       { type: 'image', src: 'assets/projects/01/key-visual.jpg', ratio: '4:5', caption: 'AI key visual',
         prompt: 'Editorial still life of a sculpted glass perfume bottle floating above wet black sand, soft rim light, 85mm lens, subtle film grain, luxury campaign mood.',
         firstGeneration: 'assets/projects/01/key-visual-first.jpg' },
       { type: 'image', src: 'assets/projects/01/post.jpg', ratio: '1:1', caption: 'Feed post' },
       { type: 'image', src: 'assets/projects/01/story.jpg', ratio: '9:16', phone: true, caption: 'Story' },
-      { type: 'video', src: 'assets/projects/01/bts.mp4', poster: 'assets/projects/01/bts.jpg', ratio: '16:9', caption: 'Behind the scenes' },
+      { type: 'video', src: 'assets/projects/01/bts.mp4', poster: 'assets/projects/01/bts.jpg', ratio: '9:16', phone: true, caption: 'Behind the scenes' },
     ],
   },
   {
@@ -68,11 +69,11 @@ const PROJECTS = [
     tags: ['Video', 'Social'],
     description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
     items: [
-      { type: 'video', src: 'assets/projects/02/launch-film.mp4', poster: 'assets/projects/02/launch-film.jpg', ratio: '16:9', caption: 'Launch film' },
+      { type: 'video', src: 'assets/projects/02/launch-video.mp4', poster: 'assets/projects/02/launch-video.jpg', ratio: '9:16', phone: true, caption: 'Launch video' },
       { type: 'video', src: 'assets/projects/02/teaser.mp4', poster: 'assets/projects/02/teaser.jpg', ratio: '9:16', phone: true, caption: 'Teaser' },
       { type: 'video', src: 'assets/projects/02/cutdown.mp4', poster: 'assets/projects/02/cutdown.jpg', ratio: '1:1', caption: '1:1 cutdown' },
       { type: 'image', src: 'assets/projects/02/carousel.jpg', ratio: '4:5', caption: 'Carousel' },
-      { type: 'image', src: 'assets/projects/02/banner.jpg', ratio: '16:9', caption: 'Web banner' },
+      { type: 'image', src: 'assets/projects/02/product-visual.jpg', ratio: '4:5', caption: 'Product visual' },
     ],
   },
   {
@@ -83,7 +84,7 @@ const PROJECTS = [
     tags: ['Video', 'Social'],
     description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
     items: [
-      { type: 'video', src: 'assets/projects/03/aftermovie.mp4', poster: 'assets/projects/03/aftermovie.jpg', ratio: '16:9', caption: 'Aftermovie' },
+      { type: 'video', src: 'assets/projects/03/aftermovie.mp4', poster: 'assets/projects/03/aftermovie.jpg', ratio: '9:16', phone: true, caption: 'Aftermovie' },
       { type: 'video', src: 'assets/projects/03/recap-reel.mp4', poster: 'assets/projects/03/recap-reel.jpg', ratio: '9:16', phone: true, caption: 'Recap reel' },
       { type: 'image', src: 'assets/projects/03/lineup.jpg', ratio: '4:5', caption: 'Line-up post' },
       { type: 'image', src: 'assets/projects/03/countdown.jpg', ratio: '9:16', phone: true, caption: 'Countdown story' },
@@ -103,7 +104,7 @@ const PROJECTS = [
         firstGeneration: 'assets/projects/04/visual-01-first.jpg' },
       { type: 'image', src: 'assets/projects/04/visual-02.jpg', ratio: '4:5', caption: 'Concept visual',
         prompt: 'Aerial view of a green city at dawn, autonomous cable cars gliding between towers, mist, warm low sun, cinematic wide shot.' },
-      { type: 'video', src: 'assets/projects/04/ai-film.mp4', poster: 'assets/projects/04/ai-film.jpg', ratio: '16:9', caption: 'AI video' },
+      { type: 'video', src: 'assets/projects/04/ai-video.mp4', poster: 'assets/projects/04/ai-video.jpg', ratio: '9:16', phone: true, caption: 'AI video' },
       { type: 'image', src: 'assets/projects/04/visual-03.jpg', ratio: '1:1', caption: 'Social visual',
         prompt: 'Close-up of a commuter’s hand holding a glowing transit pass, shallow depth of field, neon reflections, editorial photography.' },
     ],
@@ -120,7 +121,7 @@ const PROJECTS = [
       { type: 'video', src: 'assets/projects/05/creator-02.mp4', poster: 'assets/projects/05/creator-02.jpg', ratio: '9:16', phone: true, caption: 'Creator reel' },
       { type: 'video', src: 'assets/projects/05/creator-03.mp4', poster: 'assets/projects/05/creator-03.jpg', ratio: '9:16', phone: true, caption: 'Creator reel' },
       { type: 'image', src: 'assets/projects/05/announcement.jpg', ratio: '4:5', caption: 'Announcement post' },
-      { type: 'video', src: 'assets/projects/05/compilation.mp4', poster: 'assets/projects/05/compilation.jpg', ratio: '16:9', caption: 'Compilation' },
+      { type: 'video', src: 'assets/projects/05/compilation.mp4', poster: 'assets/projects/05/compilation.jpg', ratio: '1:1', caption: 'Compilation' },
     ],
   },
 ];
