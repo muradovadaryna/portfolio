@@ -994,8 +994,8 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
   function initSocial() {
     const block = $('#social');
     if (!block) return;
-    const viewport = $('.social__viewport', block);
-    const track = $('.social__track', block);
+    const viewport = $('.social__window', block);
+    const track = $('.social__phones', block);
     const cards = $$('.card', track);
     const headReveals = $$('[data-reveal]', block);
 
@@ -1019,7 +1019,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
         },
       });
 
-      // Head text enters with the section
+      // Head text enters with the section (it stays still while the phones move)
       gsap.set(headReveals, { opacity: 0, y: 36 });
       ScrollTrigger.create({
         trigger: block, start: 'top 75%', once: true,
@@ -1220,7 +1220,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     let speed = 1;
     let hover = false;
     let visible = false;
-    const BASE = 70; // pixels per second
+    const BASE = 140; // pixels per second
 
     marquee.addEventListener('pointerenter', () => { hover = true; });
     marquee.addEventListener('pointerleave', () => { hover = false; });
@@ -1323,6 +1323,24 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     v.src = SITE.heroVideo;
     const pr = v.play();
     if (pr && pr.catch) pr.catch(() => {});
+  }
+
+  function initHeroSpot() {
+    const hero = $('.hero');
+    const spot = $('.hero__spot');
+    if (!hero || !spot || !finePointer || reduced) return;
+    const pos = { x: 70, y: 30 };
+    const apply = () => {
+      spot.style.setProperty('--mx', pos.x + '%');
+      spot.style.setProperty('--my', pos.y + '%');
+    };
+    const xTo = gsap.quickTo(pos, 'x', { duration: 1.2, ease: 'power3', onUpdate: apply });
+    const yTo = gsap.quickTo(pos, 'y', { duration: 1.2, ease: 'power3', onUpdate: apply });
+    hero.addEventListener('pointermove', (e) => {
+      const r = hero.getBoundingClientRect();
+      xTo(((e.clientX - r.left) / r.width) * 100);
+      yTo(((e.clientY - r.top) / r.height) * 100);
+    });
   }
 
   function prepareHero() {
@@ -1437,6 +1455,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     initCursor();
     initMagnetic();
     initHeroVideo();
+    initHeroSpot();
 
     // Scroll animations (top to bottom)
     const playHero = prepareHero();

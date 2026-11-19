@@ -102,9 +102,12 @@
          ============================================================ -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
+        <span class="hero__grid"></span>
         <span class="hero__blob hero__blob--1"></span>
         <span class="hero__blob hero__blob--2"></span>
         <span class="hero__blob hero__blob--3"></span>
+        <span class="hero__blob hero__blob--4"></span>
+        <span class="hero__spot"></span>
         <!-- Optional looping background video: set SITE.heroVideo in js/main.js -->
         <video class="hero__video" muted loop playsinline preload="none" tabindex="-1"></video>
         <span class="hero__shade"></span>
@@ -172,7 +175,6 @@
         <!-- A) VIDEO PRODUCTION -->
         <div class="work-block" id="video">
           <div class="work-head grid">
-            <p class="work-head__index label" data-reveal>A</p>
             <h3 class="work-head__title" data-split>Video <em>Production</em></h3>
             <p class="work-head__intro" data-reveal>Attention-holding videos built for every screen, story and campaign.</p>
           </div>
@@ -190,7 +192,6 @@
         <!-- B) AI CREATIVES -->
         <div class="work-block" id="ai">
           <div class="work-head grid">
-            <p class="work-head__index label" data-reveal>B</p>
             <h3 class="work-head__title" data-split>AI <em>Creatives</em></h3>
             <p class="work-head__intro" data-reveal>Eye-catching AI visuals for ideas no camera could capture.</p>
           </div>
@@ -199,15 +200,14 @@
         </div>
       </div>
 
-      <!-- C) SOCIAL MEDIA DESIGNS (full-width horizontal gallery) -->
+      <!-- C) SOCIAL MEDIA DESIGNS (title stays still, phones slide sideways) -->
       <div class="work-block social" id="social">
-        <div class="social__viewport">
-          <div class="social__track">
-            <div class="work-head social__head">
-              <p class="work-head__index label" data-reveal>C</p>
-              <h3 class="work-head__title" data-split>Social Media <em>Designs</em></h3>
-              <p class="work-head__intro" data-reveal>Scroll-stopping creatives for every feed, format and audience.</p>
-            </div>
+        <div class="social__inner">
+          <div class="work-head social__head">
+            <h3 class="work-head__title" data-split>Social Media <em>Designs</em></h3>
+            <p class="work-head__intro" data-reveal>Scroll-stopping creatives for every feed, format and audience.</p>
+          </div>
+          <div class="social__window">
             <div class="social__phones" data-grid="social"></div>
           </div>
         </div>
@@ -262,16 +262,16 @@
       <div class="container">
         <p class="section-label" data-reveal><span>(05)</span> About</p>
         <div class="about__grid grid">
-          <h2 class="section-title about__title" id="about-title" data-split>Different industries. Different audiences. Same eye for <em>detail.</em></h2>
-          <div class="about__body">
+          <div class="about__main">
+            <h2 class="section-title about__title" id="about-title" data-split>Different industries. Different audiences. Same eye for <em>detail.</em></h2>
             <p class="about__text" data-scrub-words>I'm Daryna, a creative producer based in Slovenia. Five years of creating video, design and social content across fashion, tech, media, events and beyond, now with AI tools as part of the process. With a background in project management, I handle timelines, teams and budgets as carefully as the creative itself.</p>
-            <figure class="portrait" data-reveal>
-              <div class="portrait__frame">
-                <span class="ph" aria-hidden="true"><span class="ph__label">assets/images/portrait.jpg</span></span>
-                <img class="portrait__img" data-src="assets/images/portrait.jpg" alt="Portrait of Daryna Muradova" decoding="async">
-              </div>
-            </figure>
           </div>
+          <figure class="portrait" data-reveal>
+            <div class="portrait__frame">
+              <span class="ph" aria-hidden="true"><span class="ph__label">assets/images/portrait.jpg</span></span>
+              <img class="portrait__img" data-src="assets/images/portrait.jpg" alt="Portrait of Daryna Muradova" decoding="async">
+            </div>
+          </figure>
         </div>
       </div>
     </section>
@@ -316,7 +316,7 @@
           </ul>
 
           <div class="contact__details label" data-reveal>
-            <p>Based in Slovenia · Open to relocate</p>
+            <p>Based in Slovenia</p>
             <p>English · Slovenian · Ukrainian · Russian</p>
             <p class="contact__time" data-clock>Ljubljana — <time>--:--</time></p>
           </div>
