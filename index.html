@@ -119,7 +119,7 @@
         <div class="hero__foot grid">
           <p class="hero__sub" data-hero-fade>Five years of turning ideas into finished, multi-platform content.</p>
           <p class="hero__tags label" data-hero-fade>
-            <a href="#video">VIDEO PRODUCTION</a><span aria-hidden="true"> · </span><a href="#ai">AI CREATIVES</a><span aria-hidden="true"> · </span><a href="#social">SOCIAL MEDIA DESIGNS</a>
+            <a href="#work" data-tag="Video">VIDEO PRODUCTION</a><span aria-hidden="true"> · </span><a href="#work" data-tag="AI">AI CREATIVES</a><span aria-hidden="true"> · </span><a href="#work" data-tag="Social">SOCIAL MEDIA DESIGNS</a>
           </p>
           <div class="hero__cta" data-hero-fade>
             <a class="btn" href="#work" data-magnetic>
@@ -164,54 +164,15 @@
     </section>
 
     <!-- ============================================================
-         (03) WORK
+         (03) WORK — featured projects
          Projects are NOT written here. They are generated from the
          PROJECTS list at the top of js/main.js.
          ============================================================ -->
     <section class="section work" id="work" aria-labelledby="work-label">
       <div class="container">
         <h2 class="section-label" id="work-label" data-reveal><span>(03)</span> Work</h2>
-
-        <!-- A) VIDEO PRODUCTION -->
-        <div class="work-block" id="video">
-          <div class="work-head grid">
-            <h3 class="work-head__title" data-split>Video <em>Production</em></h3>
-            <p class="work-head__intro" data-reveal>Attention-holding videos built for every screen, story and campaign.</p>
-          </div>
-
-          <div class="ratio-switch" role="group" aria-label="Video aspect ratio" data-reveal>
-            <span class="ratio-switch__thumb" aria-hidden="true"></span>
-            <button type="button" class="ratio-switch__btn" data-ratio="16:9" aria-pressed="true">16:9</button>
-            <button type="button" class="ratio-switch__btn" data-ratio="1:1" aria-pressed="false">1:1</button>
-            <button type="button" class="ratio-switch__btn" data-ratio="9:16" aria-pressed="false">9:16</button>
-          </div>
-
-          <div class="card-grid card-grid--video" data-grid="video" data-ratio="16:9"></div>
-        </div>
-
-        <!-- B) AI CREATIVES -->
-        <div class="work-block" id="ai">
-          <div class="work-head grid">
-            <h3 class="work-head__title" data-split>AI <em>Creatives</em></h3>
-            <p class="work-head__intro" data-reveal>Eye-catching AI visuals for ideas no camera could capture.</p>
-          </div>
-
-          <div class="card-grid card-grid--ai" data-grid="ai"></div>
-        </div>
       </div>
-
-      <!-- C) SOCIAL MEDIA DESIGNS (title stays still, phones slide sideways) -->
-      <div class="work-block social" id="social">
-        <div class="social__inner">
-          <div class="work-head social__head">
-            <h3 class="work-head__title" data-split>Social Media <em>Designs</em></h3>
-            <p class="work-head__intro" data-reveal>Scroll-stopping creatives for every feed, format and audience.</p>
-          </div>
-          <div class="social__window">
-            <div class="social__phones" data-grid="social"></div>
-          </div>
-        </div>
-      </div>
+      <div class="projects" data-projects></div>
     </section>
 
     <!-- ============================================================
@@ -368,7 +329,6 @@
   <!-- Libraries (CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
 

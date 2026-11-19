@@ -15,40 +15,50 @@ assets/cv/          ← Daryna_Muradova_CV.pdf
 
 ## 1. Add or replace projects
 
-Every project card is generated from the **`PROJECTS` list at the top of `js/main.js`**. You never need to touch the HTML.
+The Work section shows **featured projects**, each with a title, details and a sideways-scrolling strip of materials. They are all generated from the **`PROJECTS` list at the top of `js/main.js`**. You never need to touch the HTML.
 
-Each project is one block in curly braces `{ … }`. Copy an existing block, paste it where you want the card to appear, and change the values:
+Each project looks like this:
 
 ```js
 {
-  category: 'video',                         // 'video', 'ai' or 'social'
-  title: 'Spring Campaign Film',
-  industry: 'Fashion',
-  format: 'Campaign film',
-  video: 'assets/videos/video-01.mp4',       // or use `image:` for a still
-  poster: 'assets/images/poster-01.jpg',     // still frame shown before playing
+  title: 'Spring *Campaign*',      // *word* = italics
+  client: 'Client name',
+  year: '2025',
+  role: 'Creative producer',
+  tags: ['Video', 'AI', 'Social'],
+  description: 'The brief, the idea and what you delivered.',
+  items: [
+    { type: 'video', src: 'assets/projects/01/campaign-film.mp4', poster: 'assets/projects/01/campaign-film.jpg', ratio: '16:9', caption: 'Campaign film' },
+    { type: 'video', src: 'assets/projects/01/reel.mp4', poster: 'assets/projects/01/reel.jpg', ratio: '9:16', phone: true, caption: 'Instagram reel' },
+    { type: 'image', src: 'assets/projects/01/key-visual.jpg', ratio: '4:5', caption: 'AI key visual', prompt: 'The prompt you used…' },
+    { type: 'image', src: 'assets/projects/01/post.jpg', ratio: '1:1', caption: 'Feed post' },
+  ],
 },
 ```
 
-Extras per category:
+**Items** (as many as you like per project):
 
-| Category | Extra fields |
+| Field | What it does |
 |---|---|
-| `video` | `ratios: { '16:9': '…mp4', '1:1': '…mp4', '9:16': '…mp4' }` gives a separate file for each button of the ratio switcher. It's optional: any missing ratio uses `video`, cropped to fit. |
-| `ai` | `prompt: '…'` is the text typed out when someone clicks **Prompt**. `firstGeneration: '…jpg'` is optional and adds a "First generation vs Final" comparison. |
-| `social` | `image` or `video` + `poster`. These are shown inside phone frames, so a 9:16 format works best. |
+| `type` | `'video'` or `'image'` |
+| `src` | the file |
+| `poster` | for videos: a still frame shown before it plays (recommended) |
+| `ratio` | the file's shape: `'16:9'`, `'9:16'`, `'1:1'`, `'4:5'`, `'4:3'`… |
+| `phone: true` | shows the item inside a phone frame, which suits reels and stories |
+| `caption` | small label under the item |
+| `prompt` | for AI images: adds a **Prompt** button that reveals the text |
+| `firstGeneration` | optional, with `prompt`: adds a "First generation vs Final" comparison |
 
-To remove a project, delete its block. To reorder, move the blocks.
-Keep the comma after each `}`.
+To add a project, copy a whole `{ … },` block and edit it. To remove one, delete its block, and to reorder, move the blocks.
+The hero links (VIDEO PRODUCTION · AI CREATIVES · SOCIAL MEDIA DESIGNS) jump to the first project that has that tag.
 
-The 9 projects included are **placeholders**. Replace them with your real work.
+The 5 projects included are **placeholders**. Replace them with your real work.
 
 ## 2. Where to put files
 
 | What | Where | Tips |
 |---|---|---|
-| Videos | `assets/videos/` | MP4 (H.264). Keep files short and compressed, ideally under 10 MB each. |
-| Posters / images | `assets/images/` | JPG or WebP, about 1600 px on the long side. |
+| Project files | `assets/projects/01/`, `02/` … one folder per project | MP4 (H.264) for video, ideally under 10 MB each; JPG/WebP about 1600 px on the long side for images. |
 | Portrait | `assets/images/portrait.jpg` | Portrait orientation (4:5). It's shown in black and white and turns to color on hover. |
 | CV | `assets/cv/Daryna_Muradova_CV.pdf` | Use exactly this file name, or change `cv` in `SITE`. |
 | Share image | `assets/images/og-image.jpg` | 1200 × 630, shown when the link is shared. |
@@ -89,5 +99,5 @@ Every push to `main` then updates the live site automatically.
 ---
 
 ### Notes
-- Libraries load from CDNs: GSAP + ScrollTrigger + Flip, Lenis and SplitType. If they can't load, the page still shows all content, just without animation.
+- Libraries load from CDNs: GSAP + ScrollTrigger, Lenis and SplitType. If they can't load, the page still shows all content, just without animation.
 - Users with "reduce motion" turned on get simple fades, native scrolling and no parallax.
