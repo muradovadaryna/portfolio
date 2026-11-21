@@ -16,7 +16,7 @@
    One line = one post in the grid. Posts appear in this order.
    All posts are 4:5 (1080 x 1350 px, the standard Instagram post size).
 
-   src    Path to the image, e.g. 'assets/social/post-01.jpg'
+   src    Path to the image, e.g. 'assets/social/post-01.webp'
    alt    Short description of the post for screen readers (recommended)
    title  (optional) name shown in the full-screen viewer
 
@@ -25,15 +25,15 @@
    If a file doesn't exist yet, a placeholder with the file name is shown.
    ========================================================================== */
 const SOCIAL_POSTS = [
-  { src: 'assets/social/post-01.jpg', alt: 'Offscript 2027 conference announcement poster' },
-  { src: 'assets/social/post-02.jpg', alt: 'Offscript 2027 speaker announcement, Maya Lorenz' },
-  { src: 'assets/social/post-03.jpg', alt: 'Offscript 2027 speaker badge mockup' },
-  { src: 'assets/social/post-04.jpg', alt: 'Nocturn night race poster' },
-  { src: 'assets/social/post-05.jpg', alt: 'Nocturn reflective collection keychain drop' },
-  { src: 'assets/social/post-06.jpg', alt: 'Nocturn December training calendar' },
-  { src: 'assets/social/post-07.jpg', alt: 'Wine drop post, vintage 2013' },
-  { src: 'assets/social/post-08.jpg', alt: 'Rare wine live talk announcement' },
-  { src: 'assets/social/post-09.jpg', alt: 'Bhutan harvest experience auction post' },
+  { src: 'assets/social/post-01.webp', alt: 'Offscript 2027 conference announcement poster' },
+  { src: 'assets/social/post-02.webp', alt: 'Offscript 2027 speaker announcement, Maya Lorenz' },
+  { src: 'assets/social/post-03.webp', alt: 'Offscript 2027 speaker badge mockup' },
+  { src: 'assets/social/post-04.webp', alt: 'Nocturn night race poster' },
+  { src: 'assets/social/post-05.webp', alt: 'Nocturn reflective collection keychain drop' },
+  { src: 'assets/social/post-06.webp', alt: 'Nocturn December training calendar' },
+  { src: 'assets/social/post-07.webp', alt: 'Wine drop post, vintage 2013' },
+  { src: 'assets/social/post-08.webp', alt: 'Rare wine live talk announcement' },
+  { src: 'assets/social/post-09.webp', alt: 'Bhutan harvest experience auction post' },
 ];
 
 
