@@ -13,52 +13,32 @@ assets/cv/          ← Daryna_Muradova_CV.pdf
 
 ---
 
-## 1. Add or replace projects
+## 1. Add or replace work
 
-The Work section shows **featured projects**, each with a title, details and a sideways-scrolling strip of materials. They are all generated from the **`PROJECTS` list at the top of `js/main.js`**. You never need to touch the HTML.
-
-Each project looks like this:
+The Work section is split into categories. Right now there is one: **Social Media Designs**, a 3-column grid of 4:5 posts (1080 × 1350 px).
+The posts come from the **`SOCIAL_POSTS` list at the top of `js/main.js`**. You never need to touch the HTML.
 
 ```js
-{
-  title: 'Spring *Campaign*',      // *word* = italics
-  client: 'Client name',
-  year: '2025',
-  role: 'Creative producer',
-  tags: ['Video', 'AI', 'Social'],
-  description: 'The brief, the idea and what you delivered.',
-  items: [
-    { type: 'video', src: 'assets/projects/01/campaign-film.mp4', poster: 'assets/projects/01/campaign-film.jpg', ratio: '16:9', caption: 'Campaign film' },
-    { type: 'video', src: 'assets/projects/01/reel.mp4', poster: 'assets/projects/01/reel.jpg', ratio: '9:16', phone: true, caption: 'Instagram reel' },
-    { type: 'image', src: 'assets/projects/01/key-visual.jpg', ratio: '4:5', caption: 'AI key visual', prompt: 'The prompt you used…' },
-    { type: 'image', src: 'assets/projects/01/post.jpg', ratio: '1:1', caption: 'Feed post' },
-  ],
-},
+const SOCIAL_POSTS = [
+  { src: 'assets/social/post-01.webp', alt: 'Offscript 2027 conference announcement poster' },
+  { src: 'assets/social/post-02.webp', alt: 'Offscript 2027 speaker announcement, Maya Lorenz' },
+  // …
+];
 ```
 
-**Items** (as many as you like per project):
+- **Add a post:** put the image in `assets/social/`, copy a line, and change `src` (and `alt`, a short description for screen readers).
+- **Remove a post:** delete its line. To reorder, move the lines.
+- **Optional** `title: '…'` is shown in the full-screen viewer.
 
-| Field | What it does |
-|---|---|
-| `type` | `'video'` or `'image'` |
-| `src` | the file |
-| `poster` | for videos: a still frame shown before it plays (recommended) |
-| `ratio` | the file's shape: `'16:9'`, `'9:16'`, `'1:1'`, `'4:5'`, `'4:3'`… |
-| `phone: true` | shows the item inside a phone frame, which suits reels and stories |
-| `caption` | small label under the item |
-| `prompt` | for AI images: adds a **Prompt** button that reveals the text |
-| `firstGeneration` | optional, with `prompt`: adds a "First generation vs Final" comparison |
+Images look best at exactly 1080 × 1350. WebP or JPG keeps the site fast. The site loads only the files listed in `SOCIAL_POSTS`, so other files in the folder don't slow it down.
 
-To add a project, copy a whole `{ … },` block and edit it. To remove one, delete its block, and to reorder, move the blocks.
-The hero links (VIDEO PRODUCTION · AI CREATIVES · SOCIAL MEDIA DESIGNS) jump to the first project that has that tag.
-
-The 5 projects included are **placeholders**. Replace them with your real work.
+The hero links (VIDEO PRODUCTION · AI CREATIVES · SOCIAL MEDIA DESIGNS) jump to their category, or to Work while that category isn't on the page yet.
 
 ## 2. Where to put files
 
 | What | Where | Tips |
 |---|---|---|
-| Project files | `assets/projects/01/`, `02/` … one folder per project | MP4 (H.264) for video, ideally under 10 MB each; JPG/WebP about 1600 px on the long side for images. |
+| Social posts | `assets/social/` | 1080 × 1350, WebP or JPG. |
 | Portrait | `assets/images/portrait.jpg` | Portrait orientation (4:5). It's shown in black and white and turns to color on hover. |
 | CV | `assets/cv/Daryna_Muradova_CV.pdf` | Use exactly this file name, or change `cv` in `SITE`. |
 | Share image | `assets/images/og-image.jpg` | 1200 × 630, shown when the link is shared. |
