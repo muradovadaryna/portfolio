@@ -41,7 +41,7 @@ const SOCIAL_POSTS = [
    2. SITE SETTINGS — links used everywhere on the page
    ========================================================================== */
 const SITE = {
-  email: 'hello@example.com',                          // ← REPLACE with your email
+  email: 'muradovadarina900@gmail.com',
   linkedin: 'https://www.linkedin.com/in/daryna-muradova-945079234/',
   cv: 'assets/cv/Daryna_Muradova_CV.pdf',              // ← put your CV PDF at this path
   heroVideo: '',        // optional muted loop behind the hero, e.g. 'assets/videos/hero-loop.mp4'

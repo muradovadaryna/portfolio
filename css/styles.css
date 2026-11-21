@@ -1170,7 +1170,9 @@ em { font-style: italic; }
   display: inline-block;
   max-width: 100%;
   font-family: var(--f-serif);
-  font-size: clamp(2rem, 4.2vw + 0.6rem, 5.25rem);
+  /* sized to keep the whole address on one line, even on phones */
+  font-size: min(clamp(2rem, 4.2vw + 0.6rem, 5.25rem), 7.6vw);
+  white-space: nowrap;
   line-height: 1.1;
   letter-spacing: -0.025em;
   padding-bottom: 0.12em;

@@ -53,7 +53,7 @@ Edit the **`SITE` block in `js/main.js`**. It updates every link on the page (he
 
 ```js
 const SITE = {
-  email: 'hello@example.com',
+  email: 'muradovadarina900@gmail.com',
   linkedin: 'https://www.linkedin.com/in/daryna-muradova-945079234/',
   cv: 'assets/cv/Daryna_Muradova_CV.pdf',
   heroVideo: '',
