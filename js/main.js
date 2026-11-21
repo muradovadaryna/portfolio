@@ -3,7 +3,7 @@
    --------------------------------------------------------------------------
    EDIT HERE (no coding needed):
      1. SOCIAL_POSTS — the posts in Work > Social Media Designs
-     2. SITE      — email, LinkedIn, Instagram, CV, optional hero video
+     2. SITE      — email, LinkedIn, CV, optional hero video
      3. TOOLKIT   — the words in the moving toolkit strip
 
    Everything below the "ENGINE" line builds the page and runs the animations.
@@ -43,7 +43,6 @@ const SOCIAL_POSTS = [
 const SITE = {
   email: 'hello@example.com',                          // ← REPLACE with your email
   linkedin: 'https://www.linkedin.com/in/daryna-muradova-945079234/',
-  instagram: 'https://instagram.com/your-handle',      // ← REPLACE with your Instagram URL
   cv: 'assets/cv/Daryna_Muradova_CV.pdf',              // ← put your CV PDF at this path
   heroVideo: '',        // optional muted loop behind the hero, e.g. 'assets/videos/hero-loop.mp4'
   timeZone: 'Europe/Ljubljana',                        // used by the live clock in Contact
@@ -113,7 +112,6 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     $$('[data-link="email"]').forEach((a) => { a.href = 'mailto:' + SITE.email; });
     $$('[data-link-text="email"]').forEach((el) => { el.textContent = SITE.email; });
     $$('[data-link="linkedin"]').forEach((a) => { a.href = SITE.linkedin; });
-    $$('[data-link="instagram"]').forEach((a) => { a.href = SITE.instagram; });
     $$('[data-link="cv"]').forEach((a) => { a.href = SITE.cv; });
     // Hero tags jump to their category (or to Work if it isn't on the page yet)
     $$('[data-tag]').forEach((a) => {

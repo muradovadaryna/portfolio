@@ -67,15 +67,14 @@ The 5 projects included are **placeholders**. Replace them with your real work.
 
 If a file is missing, the site shows a neutral placeholder with the file path it expects, so nothing looks broken.
 
-## 3. Email, LinkedIn and Instagram links
+## 3. Email and LinkedIn links
 
 Edit the **`SITE` block in `js/main.js`**. It updates every link on the page (header, contact, footer):
 
 ```js
 const SITE = {
   email: 'hello@example.com',
-  linkedin: 'https://linkedin.com/in/your-profile',
-  instagram: 'https://instagram.com/your-handle',
+  linkedin: 'https://www.linkedin.com/in/daryna-muradova-945079234/',
   cv: 'assets/cv/Daryna_Muradova_CV.pdf',
   heroVideo: '',
   timeZone: 'Europe/Ljubljana',
