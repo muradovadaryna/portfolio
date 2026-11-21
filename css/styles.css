@@ -1091,6 +1091,9 @@ em { font-style: italic; }
 }
 .portrait__img.is-loaded { opacity: 1; }
 .portrait:hover .portrait__img { filter: grayscale(0) contrast(1); }
+/* slight zoom on hover so the photo can shift inside the frame without showing edges */
+.portrait__img { scale: 1.06; transition: filter 1.2s var(--ease-out), opacity 0.8s var(--ease-out), scale 1s var(--ease-out); }
+.portrait:hover .portrait__img { scale: 1.1; }
 
 @media (min-width: 768px) {
   .about__main { grid-column: 1 / span 7; }

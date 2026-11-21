@@ -701,7 +701,9 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
   function initMagnetic() {
     if (!finePointer || reduced || !hasGSAP) return;
     $$('[data-magnetic]').forEach((el) => {
-      const strength = (el.classList.contains('btn') || el.classList.contains('pill')) ? 0.35 : 0.25;
+      // data-magnetic="0.1" sets a custom pull; otherwise buttons pull a bit more than links
+      const custom = parseFloat(el.dataset.magnetic);
+      const strength = custom > 0 ? custom : (el.classList.contains('btn') || el.classList.contains('pill')) ? 0.35 : 0.25;
       const xTo = gsap.quickTo(el, 'x', { duration: 0.6, ease: 'power3' });
       const yTo = gsap.quickTo(el, 'y', { duration: 0.6, ease: 'power3' });
       el.addEventListener('pointermove', (e) => {
@@ -711,6 +713,18 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
       });
       el.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
     });
+
+    // Portrait: the photo inside the frame shifts the opposite way for depth
+    const frame = $('.portrait__frame');
+    const img = $('.portrait__img');
+    if (frame && img) {
+      const ix = gsap.quickTo(img, 'x', { duration: 0.9, ease: 'power3' });
+      frame.addEventListener('pointermove', (e) => {
+        const r = frame.getBoundingClientRect();
+        ix(-((e.clientX - (r.left + r.width / 2)) / r.width) * 24);
+      });
+      frame.addEventListener('pointerleave', () => ix(0));
+    }
   }
 
 
