@@ -119,7 +119,7 @@
         <div class="hero__foot grid">
           <p class="hero__sub" data-hero-fade>Five years of turning ideas into finished, multi-platform content.</p>
           <p class="hero__tags label" data-hero-fade>
-            <a href="#work" data-tag="Video">VIDEO PRODUCTION</a><span aria-hidden="true"> · </span><a href="#work" data-tag="AI">AI CREATIVES</a><span aria-hidden="true"> · </span><a href="#work" data-tag="Social">SOCIAL MEDIA DESIGNS</a>
+            <a href="#work" data-tag="video">VIDEO PRODUCTION</a><span aria-hidden="true"> · </span><a href="#work" data-tag="ai">AI CREATIVES</a><span aria-hidden="true"> · </span><a href="#work" data-tag="social">SOCIAL MEDIA DESIGNS</a>
           </p>
           <div class="hero__cta" data-hero-fade>
             <a class="btn" href="#work" data-magnetic>
@@ -164,15 +164,24 @@
     </section>
 
     <!-- ============================================================
-         (03) WORK — featured projects
-         Projects are NOT written here. They are generated from the
-         PROJECTS list at the top of js/main.js.
+         (03) WORK
+         Work items are NOT written here. They are generated from the
+         lists at the top of js/main.js.
          ============================================================ -->
     <section class="section work" id="work" aria-labelledby="work-label">
       <div class="container">
         <h2 class="section-label" id="work-label" data-reveal><span>(03)</span> Work</h2>
       </div>
-      <div class="projects" data-projects></div>
+      <div class="container">
+        <!-- SOCIAL MEDIA DESIGNS: posts come from SOCIAL_POSTS in js/main.js -->
+        <div class="work-block" id="social">
+          <div class="work-head grid">
+            <h3 class="work-head__title" data-split>Social Media <em>Designs</em></h3>
+            <p class="work-head__intro" data-reveal>Scroll-stopping creatives for every feed, format and audience.</p>
+          </div>
+          <ul class="work-grid work-grid--social" data-grid="social"></ul>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================

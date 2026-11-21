@@ -2,7 +2,7 @@
    DARYNA MURADOVA — PORTFOLIO SCRIPT
    --------------------------------------------------------------------------
    EDIT HERE (no coding needed):
-     1. PROJECTS  — the featured projects in the Work section
+     1. SOCIAL_POSTS — the posts in Work > Social Media Designs
      2. SITE      — email, LinkedIn, Instagram, CV, optional hero video
      3. TOOLKIT   — the words in the moving toolkit strip
 
@@ -11,119 +11,29 @@
 
 
 /* ==========================================================================
-   1. PROJECTS
+   1. SOCIAL MEDIA DESIGNS
    --------------------------------------------------------------------------
-   One entry = one featured project row. Rows appear in this order.
+   One line = one post in the grid. Posts appear in this order.
+   All posts are 4:5 (1080 x 1350 px, the standard Instagram post size).
 
-   title        Project name. Wrap a word in *stars* to set it in italics,
-                e.g. 'Spring *Campaign*'
-   client       Client or brand name
-   year         e.g. '2025'
-   role         Your role, e.g. 'Creative producer'
-   tags         Any of 'Video', 'AI', 'Social' (used by the links in the hero)
-   description  2–3 sentences: the brief, the idea, what was delivered
-   items        The materials shown in the sideways-scrolling strip (any number)
+   src    Path to the image, e.g. 'assets/social/post-01.jpg'
+   alt    Short description of the post for screen readers (recommended)
+   title  (optional) name shown in the full-screen viewer
 
-   EACH ITEM:
-   type         'video' or 'image'
-   src          Path to the file, e.g. 'assets/projects/01/hero-film.mp4'
-   poster       (videos) still image shown before the video plays
-   ratio        Shape of the file: '9:16', '4:5', '1:1', '16:9', '4:3' …
-                Any mix works — items keep their own shape in the strip.
-   phone        true → shows the item inside a phone frame (great for 9:16)
-   caption      Small line under the item, e.g. 'Campaign film'
-   prompt       (AI images) adds a "Prompt" button that reveals this text
-   firstGeneration  (optional, with prompt) image of the first generation
-   alt          (optional) description of the image for screen readers
-
-   Put each project's files in its own folder: assets/projects/01/, 02/ …
-   If a file doesn't exist yet, a neutral placeholder with the file name is
-   shown instead — so you can see exactly which file to add.
-
-   ▼ The 5 projects below are PLACEHOLDERS. Replace them with your own work. ▼
+   To add a post: copy a line and change the file name.
+   To remove a post: delete its line. To reorder: move the lines.
+   If a file doesn't exist yet, a placeholder with the file name is shown.
    ========================================================================== */
-const PROJECTS = [
-  {
-    title: 'Spring *Campaign*',
-    client: 'Client name',
-    year: '2025',
-    role: 'Creative producer',
-    tags: ['Video', 'AI', 'Social'],
-    description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
-    items: [
-      { type: 'video', src: 'assets/projects/01/campaign-video.mp4', poster: 'assets/projects/01/campaign-video.jpg', ratio: '9:16', phone: true, caption: 'Campaign video' },
-      { type: 'video', src: 'assets/projects/01/reel.mp4', poster: 'assets/projects/01/reel.jpg', ratio: '9:16', phone: true, caption: 'Instagram reel' },
-      { type: 'image', src: 'assets/projects/01/key-visual.jpg', ratio: '4:5', caption: 'AI key visual',
-        prompt: 'Editorial still life of a sculpted glass perfume bottle floating above wet black sand, soft rim light, 85mm lens, subtle film grain, luxury campaign mood.',
-        firstGeneration: 'assets/projects/01/key-visual-first.jpg' },
-      { type: 'image', src: 'assets/projects/01/post.jpg', ratio: '1:1', caption: 'Feed post' },
-      { type: 'image', src: 'assets/projects/01/story.jpg', ratio: '9:16', phone: true, caption: 'Story' },
-      { type: 'video', src: 'assets/projects/01/bts.mp4', poster: 'assets/projects/01/bts.jpg', ratio: '9:16', phone: true, caption: 'Behind the scenes' },
-    ],
-  },
-  {
-    title: 'Product *Launch*',
-    client: 'Client name',
-    year: '2025',
-    role: 'Producer & editor',
-    tags: ['Video', 'Social'],
-    description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
-    items: [
-      { type: 'video', src: 'assets/projects/02/launch-video.mp4', poster: 'assets/projects/02/launch-video.jpg', ratio: '9:16', phone: true, caption: 'Launch video' },
-      { type: 'video', src: 'assets/projects/02/teaser.mp4', poster: 'assets/projects/02/teaser.jpg', ratio: '9:16', phone: true, caption: 'Teaser' },
-      { type: 'video', src: 'assets/projects/02/cutdown.mp4', poster: 'assets/projects/02/cutdown.jpg', ratio: '1:1', caption: '1:1 cutdown' },
-      { type: 'image', src: 'assets/projects/02/carousel.jpg', ratio: '4:5', caption: 'Carousel' },
-      { type: 'image', src: 'assets/projects/02/product-visual.jpg', ratio: '4:5', caption: 'Product visual' },
-    ],
-  },
-  {
-    title: 'Festival *Season*',
-    client: 'Client name',
-    year: '2024',
-    role: 'Content producer',
-    tags: ['Video', 'Social'],
-    description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
-    items: [
-      { type: 'video', src: 'assets/projects/03/aftermovie.mp4', poster: 'assets/projects/03/aftermovie.jpg', ratio: '9:16', phone: true, caption: 'Aftermovie' },
-      { type: 'video', src: 'assets/projects/03/recap-reel.mp4', poster: 'assets/projects/03/recap-reel.jpg', ratio: '9:16', phone: true, caption: 'Recap reel' },
-      { type: 'image', src: 'assets/projects/03/lineup.jpg', ratio: '4:5', caption: 'Line-up post' },
-      { type: 'image', src: 'assets/projects/03/countdown.jpg', ratio: '9:16', phone: true, caption: 'Countdown story' },
-      { type: 'image', src: 'assets/projects/03/photo.jpg', ratio: '4:3', caption: 'Event photo' },
-    ],
-  },
-  {
-    title: 'Future *Commute*',
-    client: 'Client name',
-    year: '2025',
-    role: 'AI creative lead',
-    tags: ['AI'],
-    description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
-    items: [
-      { type: 'image', src: 'assets/projects/04/visual-01.jpg', ratio: '4:5', caption: 'Concept visual',
-        prompt: 'Night-time city tram interior in 2040, passengers lit by soft screen glow, translucent seats, rain streaks on curved glass, documentary photo style, 35mm.',
-        firstGeneration: 'assets/projects/04/visual-01-first.jpg' },
-      { type: 'image', src: 'assets/projects/04/visual-02.jpg', ratio: '4:5', caption: 'Concept visual',
-        prompt: 'Aerial view of a green city at dawn, autonomous cable cars gliding between towers, mist, warm low sun, cinematic wide shot.' },
-      { type: 'video', src: 'assets/projects/04/ai-video.mp4', poster: 'assets/projects/04/ai-video.jpg', ratio: '9:16', phone: true, caption: 'AI video' },
-      { type: 'image', src: 'assets/projects/04/visual-03.jpg', ratio: '1:1', caption: 'Social visual',
-        prompt: 'Close-up of a commuter’s hand holding a glowing transit pass, shallow depth of field, neon reflections, editorial photography.' },
-    ],
-  },
-  {
-    title: 'Creator *Series*',
-    client: 'Client name',
-    year: '2024',
-    role: 'Producer, influencer collaborations',
-    tags: ['Video', 'Social'],
-    description: 'Short project description: the brief, the idea and what you delivered. Two or three sentences work best.',
-    items: [
-      { type: 'video', src: 'assets/projects/05/creator-01.mp4', poster: 'assets/projects/05/creator-01.jpg', ratio: '9:16', phone: true, caption: 'Creator reel' },
-      { type: 'video', src: 'assets/projects/05/creator-02.mp4', poster: 'assets/projects/05/creator-02.jpg', ratio: '9:16', phone: true, caption: 'Creator reel' },
-      { type: 'video', src: 'assets/projects/05/creator-03.mp4', poster: 'assets/projects/05/creator-03.jpg', ratio: '9:16', phone: true, caption: 'Creator reel' },
-      { type: 'image', src: 'assets/projects/05/announcement.jpg', ratio: '4:5', caption: 'Announcement post' },
-      { type: 'video', src: 'assets/projects/05/compilation.mp4', poster: 'assets/projects/05/compilation.jpg', ratio: '1:1', caption: 'Compilation' },
-    ],
-  },
+const SOCIAL_POSTS = [
+  { src: 'assets/social/post-01.jpg', alt: 'Offscript 2027 conference announcement poster' },
+  { src: 'assets/social/post-02.jpg', alt: 'Offscript 2027 speaker announcement, Maya Lorenz' },
+  { src: 'assets/social/post-03.jpg', alt: 'Offscript 2027 speaker badge mockup' },
+  { src: 'assets/social/post-04.jpg', alt: 'Nocturn night race poster' },
+  { src: 'assets/social/post-05.jpg', alt: 'Nocturn reflective collection keychain drop' },
+  { src: 'assets/social/post-06.jpg', alt: 'Nocturn December training calendar' },
+  { src: 'assets/social/post-07.jpg', alt: 'Wine drop post, vintage 2013' },
+  { src: 'assets/social/post-08.jpg', alt: 'Rare wine live talk announcement' },
+  { src: 'assets/social/post-09.jpg', alt: 'Bhutan harvest experience auction post' },
 ];
 
 
@@ -187,9 +97,13 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
   const richTitle = (t) => esc(t).replace(/\*(.+?)\*/g, '<em>$1</em>');
   const plainTitle = (t) => String(t || '').replace(/\*/g, '');
 
-  /** Every item of every project in one flat list: { item, project, pi } */
+  /** Every piece of work in one flat list: { item, project, pi }.
+      `project` is the category; `pi` groups items for the lightbox arrows. */
+  const CATEGORIES = [
+    { id: 'social', title: 'Social Media Designs', items: SOCIAL_POSTS.map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })) },
+  ];
   const ITEMS = [];
-  PROJECTS.forEach((project, pi) => (project.items || []).forEach((item) => ITEMS.push({ item, project, pi })));
+  CATEGORIES.forEach((project, pi) => project.items.forEach((item) => ITEMS.push({ item, project, pi })));
 
 
   /* ======================================================================
@@ -201,10 +115,10 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     $$('[data-link="linkedin"]').forEach((a) => { a.href = SITE.linkedin; });
     $$('[data-link="instagram"]').forEach((a) => { a.href = SITE.instagram; });
     $$('[data-link="cv"]').forEach((a) => { a.href = SITE.cv; });
-    // Hero tags jump to the first project with that tag
+    // Hero tags jump to their category (or to Work if it isn't on the page yet)
     $$('[data-tag]').forEach((a) => {
-      const i = PROJECTS.findIndex((p) => (p.tags || []).includes(a.dataset.tag));
-      if (i > -1) a.href = '#project-' + (i + 1);
+      const target = document.getElementById(a.dataset.tag);
+      a.href = '#' + (target ? a.dataset.tag : 'work');
     });
   }
 
@@ -221,7 +135,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
 
 
   /* ======================================================================
-     FEATURED PROJECTS (rendered from PROJECTS)
+     WORK ITEMS (rendered from the lists at the top)
      ====================================================================== */
   function mediaLayers(it, gi) {
     const still = it.poster || (it.type === 'image' ? it.src : '');
@@ -307,50 +221,12 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
       </li>`;
   }
 
-  function renderProjects() {
-    const host = $('[data-projects]');
-    if (!host) return;
-    const total = PROJECTS.length;
-    let gi = 0;
-    host.innerHTML = PROJECTS.map((p, pi) => {
-      const n = pi + 1;
-      const items = (p.items || []).map(() => itemHTML(ITEMS[gi], gi++)).join('');
-      const meta = [p.client, p.year, p.role].filter(Boolean).map(esc).join(' · ');
-      const tags = (p.tags || []).map((t) => `<li>${esc(t)}</li>`).join('');
-      return `
-        <article class="project${pi % 2 ? ' project--flip' : ''}" id="project-${n}" aria-labelledby="project-${n}-title">
-          <div class="container">
-            <div class="project__head grid">
-              <p class="project__index label" data-reveal><span>${pad(n)}</span> / ${pad(total)}</p>
-              <h3 class="project__title" id="project-${n}-title" data-split>${richTitle(p.title)}</h3>
-              <div class="project__info" data-reveal>
-                ${meta ? `<p class="project__meta label">${meta}</p>` : ''}
-                ${p.description ? `<p class="project__desc">${esc(p.description)}</p>` : ''}
-                ${tags ? `<ul class="project__tags" aria-label="Disciplines">${tags}</ul>` : ''}
-              </div>
-            </div>
-          </div>
-          <div class="strip" data-strip>
-            <div class="strip__window" tabindex="0" role="region" aria-label="${esc(plainTitle(p.title))}: project materials, scroll sideways" data-cursor="Drag">
-              <ul class="strip__track">${items}</ul>
-            </div>
-          </div>
-          <div class="container">
-            <div class="strip__controls" data-reveal>
-              <span class="label strip__count">${pad((p.items || []).length)} pieces</span>
-              <div class="strip__bar" aria-hidden="true"><i class="strip__progress"></i></div>
-              <div class="strip__nav">
-                <button type="button" class="strip__arrow" data-strip-prev aria-label="Scroll ${esc(plainTitle(p.title))} materials left">
-                  <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M20 6H2M7 1L2 6l5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-                </button>
-                <button type="button" class="strip__arrow" data-strip-next aria-label="Scroll ${esc(plainTitle(p.title))} materials right">
-                  <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18M13 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>`;
-    }).join('');
+  function renderCategories() {
+    CATEGORIES.forEach((cat, pi) => {
+      const host = $(`[data-grid="${cat.id}"]`);
+      if (!host) return;
+      host.innerHTML = ITEMS.map((e, gi) => (e.pi === pi ? itemHTML(e, gi) : '')).join('');
+    });
   }
 
 
@@ -958,84 +834,12 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
   }
 
   /* ======================================================================
-     PROJECT STRIPS — sideways scrolling, arrows, progress, drag
+     WORK GRIDS — items wipe in as they enter the screen
      ====================================================================== */
-  function initStrips() {
-    $$('.project').forEach((project) => {
-      const win = $('.strip__window', project);
-      const track = $('.strip__track', project);
-      const bar = $('.strip__progress', project);
-      const prev = $('[data-strip-prev]', project);
-      const next = $('[data-strip-next]', project);
-      const controls = $('.strip__controls', project);
-      if (!win) return;
-
-      const update = () => {
-        const max = win.scrollWidth - win.clientWidth;
-        const p = max > 2 ? win.scrollLeft / max : 0;
-        bar.style.transform = `scaleX(${Math.max(0.04, p)})`;
-        prev.disabled = win.scrollLeft < 4;
-        next.disabled = win.scrollLeft > max - 4;
-        controls.classList.toggle('is-static', max <= 2);
-      };
-      win.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update);
-      update();
-
-      const by = (dir) => win.scrollBy({ left: dir * win.clientWidth * 0.7, behavior: reduced ? 'auto' : 'smooth' });
-      prev.addEventListener('click', () => by(-1));
-      next.addEventListener('click', () => by(1));
-
-      initDrag(win);
-
-      if (!hasGSAP) return;
-      // Materials wipe in when the strip enters the screen
-      const cards = $$('.card', track);
-      hideCards(cards);
-      ScrollTrigger.create({
-        trigger: win, start: 'top 85%', once: true,
-        onEnter: () => revealCards(cards),
-      });
-      // The whole strip drifts in slightly from the right as you scroll
-      if (!reduced) {
-        gsap.fromTo(track, { x: () => window.innerWidth * 0.08 }, {
-          x: 0, ease: 'none',
-          scrollTrigger: { trigger: win, start: 'top bottom', end: 'top 35%', scrub: 0.8, invalidateOnRefresh: true },
-        });
-      }
-    });
-  }
-
-  function initDrag(win) {
-    let down = false;
-    let moved = false;
-    let startX = 0;
-    let start = 0;
-    let suppressClick = false;
-
-    win.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      if (e.target.closest('.card__toggle, .card__face--back')) return;
-      down = true;
-      moved = false;
-      startX = e.clientX;
-      start = win.scrollLeft;
-    });
-    window.addEventListener('pointermove', (e) => {
-      if (!down) return;
-      const dx = e.clientX - startX;
-      if (!moved && Math.abs(dx) > 6) { moved = true; win.classList.add('is-dragging'); }
-      if (moved) win.scrollLeft = start - dx;
-    });
-    window.addEventListener('pointerup', () => {
-      if (!down) return;
-      down = false;
-      win.classList.remove('is-dragging');
-      if (moved) { suppressClick = true; setTimeout(() => { suppressClick = false; }, 0); }
-    });
-    win.addEventListener('click', (e) => {
-      if (suppressClick) { e.preventDefault(); e.stopPropagation(); }
-    }, true);
+  function initGridReveals() {
+    const cards = $$('.work-grid .card');
+    hideCards(cards);
+    ScrollTrigger.batch(cards, { start: 'top 88%', once: true, onEnter: revealCards });
   }
 
 
@@ -1367,7 +1171,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
   function init() {
     applySiteLinks();
     buildMarquee();
-    renderProjects();
+    renderCategories();
     observeImages();
     initLightbox();
     initPrompts();
@@ -1382,7 +1186,6 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
       initHeader();
       initProgress();
       initMenu();
-      initStrips();
       $('.marquee') && $('.marquee').classList.add('is-static');
       $$('.step').forEach((s) => s.classList.add('is-active'));
       const prog = $('.steps__progress');
@@ -1406,7 +1209,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     initCounters();
     initReveals();
     initHeadingReveals();
-    initStrips();
+    initGridReveals();
     initSteps();
     initAbout();
     initMarquee();
@@ -1422,7 +1225,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
     // Never leave the visitor stuck behind the preloader
     console.error(err);
     finishLoading();
-    if (hasGSAP) gsap.set('[data-reveal], [data-hero-fade], .split-word__inner, .item__caption, .card__media, .phone, .strip__track', { clearProps: 'all' });
+    if (hasGSAP) gsap.set('[data-reveal], [data-hero-fade], .split-word__inner, .item__caption, .card__media, .phone', { clearProps: 'all' });
   }
   // Safety net in case something stalls
   setTimeout(() => {
