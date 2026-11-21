@@ -42,7 +42,7 @@ const SOCIAL_POSTS = [
    ========================================================================== */
 const SITE = {
   email: 'hello@example.com',                          // ← REPLACE with your email
-  linkedin: 'https://linkedin.com/in/your-profile',    // ← REPLACE with your LinkedIn URL
+  linkedin: 'https://www.linkedin.com/in/daryna-muradova-945079234/',
   instagram: 'https://instagram.com/your-handle',      // ← REPLACE with your Instagram URL
   cv: 'assets/cv/Daryna_Muradova_CV.pdf',              // ← put your CV PDF at this path
   heroVideo: '',        // optional muted loop behind the hero, e.g. 'assets/videos/hero-loop.mp4'
