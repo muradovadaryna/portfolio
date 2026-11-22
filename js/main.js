@@ -38,6 +38,20 @@ const SOCIAL_POSTS = [
 
 
 /* ==========================================================================
+   1b. AI CREATIVES
+   --------------------------------------------------------------------------
+   Shown as one seamless row, edge to edge with no gaps, in this order.
+   All images are 4:5 (1080 x 1350 px). Same fields as SOCIAL_POSTS above,
+   plus optional `prompt: '…'` to add a "Prompt" button that reveals it.
+   ========================================================================== */
+const AI_CREATIVES = [
+  { src: 'assets/ai/ai-02.webp', alt: 'AI visual: Lancôme Advanced Génifique Night jar on a table at night' },
+  { src: 'assets/ai/ai-01.webp', alt: 'AI visual: close-up of night cream applied to the cheek' },
+  { src: 'assets/ai/ai-03.webp', alt: 'AI visual: model holding the Lancôme Génifique Night jar to her face' },
+];
+
+
+/* ==========================================================================
    2. SITE SETTINGS — links used everywhere on the page
    ========================================================================== */
 const SITE = {
@@ -100,6 +114,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Eleve
       `project` is the category; `pi` groups items for the lightbox arrows. */
   const CATEGORIES = [
     { id: 'social', title: 'Social Media Designs', items: SOCIAL_POSTS.map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })) },
+    { id: 'ai', title: 'AI Creatives', items: AI_CREATIVES.map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })) },
   ];
   const ITEMS = [];
   CATEGORIES.forEach((project, pi) => project.items.forEach((item) => ITEMS.push({ item, project, pi })));
