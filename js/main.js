@@ -48,6 +48,9 @@ const AI_CREATIVES = [
   { src: 'assets/ai/ai-02.webp', alt: 'AI visual: Lancôme Advanced Génifique Night jar on a table at night' },
   { src: 'assets/ai/ai-01.webp', alt: 'AI visual: close-up of night cream applied to the cheek' },
   { src: 'assets/ai/ai-03.webp', alt: 'AI visual: model holding the Lancôme Génifique Night jar to her face' },
+  { src: 'assets/ai/ai-06.webp', alt: 'AI visual: hands holding a peach rose bouquet against a ruffled floral dress' },
+  { src: 'assets/ai/ai-04.webp', alt: 'AI visual: red-haired woman in a floral dress running on a black sand beach' },
+  { src: 'assets/ai/ai-05.webp', alt: 'AI visual: portrait of a red-haired woman with roses in her hair' },
 ];
 
 
