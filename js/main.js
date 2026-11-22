@@ -66,7 +66,7 @@ const SITE = {
 /* ==========================================================================
    3. TOOLKIT — the moving strip in section (06)
    ========================================================================== */
-const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'ElevenLabs', 'Claude Code'];
+const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjourney', 'ElevenLabs', 'Claude Code'];
 
 
 /* ==========================================================================
