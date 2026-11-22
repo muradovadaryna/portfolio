@@ -40,7 +40,7 @@ const SOCIAL_POSTS = [
 /* ==========================================================================
    1b. AI CREATIVES
    --------------------------------------------------------------------------
-   Shown as one seamless row, edge to edge with no gaps, in this order.
+   Same 3-column grid as Social Media Designs, in this order.
    All images are 4:5 (1080 x 1350 px). Same fields as SOCIAL_POSTS above,
    plus optional `prompt: '…'` to add a "Prompt" button that reveals it.
    ========================================================================== */
