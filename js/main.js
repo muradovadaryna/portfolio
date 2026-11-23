@@ -1086,15 +1086,18 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
      ABOUT — words brighten as you scroll, portrait parallax
      ====================================================================== */
   function initAbout() {
-    $$('[data-scrub-words]').forEach((p) => {
-      const words = splitWords(p);
+    // All paragraphs light up as one continuous wave, top to bottom
+    const paras = $$('[data-scrub-words]');
+    if (paras.length) {
+      const words = paras.flatMap((p) => splitWords(p));
+      const box = paras[0].parentElement;
       gsap.fromTo(words, { opacity: 0.18 }, {
         opacity: 1,
         ease: 'none',
         stagger: 0.1,
-        scrollTrigger: { trigger: p, start: 'top 85%', end: 'bottom 55%', scrub: true },
+        scrollTrigger: { trigger: box, start: 'top 85%', end: 'bottom 60%', scrub: true },
       });
-    });
+    }
     const img = $('.portrait__img');
     if (img && !reduced) {
       gsap.fromTo(img, { yPercent: -6 }, {
