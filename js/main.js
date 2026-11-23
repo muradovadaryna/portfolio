@@ -1021,7 +1021,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
       num.setAttribute('aria-hidden', 'true');
       const sr = document.createElement('span');
       sr.className = 'visually-hidden';
-      sr.textContent = `${target}+ `;
+      sr.textContent = `${num.textContent.trim()} `;
       $('.stat__label', stat).prepend(sr);
 
       if (!hasGSAP || reduced) { el.textContent = target; return; }
@@ -1049,7 +1049,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
     const items = $$('.step', steps);
     const mm = gsap.matchMedia();
 
-    mm.add({ horizontal: '(min-width: 768px)', vertical: '(max-width: 767px)' }, (ctx) => {
+    mm.add({ horizontal: '(min-width: 1024px)', vertical: '(max-width: 1023px)' }, (ctx) => {
       const horiz = ctx.conditions.horizontal;
       const axis = horiz ? 'scaleX' : 'scaleY';
       let fracs = [];
@@ -1086,16 +1086,15 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
      ABOUT — words brighten as you scroll, portrait parallax
      ====================================================================== */
   function initAbout() {
-    const p = $('[data-scrub-words]');
-    if (p) {
+    $$('[data-scrub-words]').forEach((p) => {
       const words = splitWords(p);
       gsap.fromTo(words, { opacity: 0.18 }, {
         opacity: 1,
         ease: 'none',
         stagger: 0.1,
-        scrollTrigger: { trigger: p, start: 'top 82%', end: 'bottom 50%', scrub: true },
+        scrollTrigger: { trigger: p, start: 'top 85%', end: 'bottom 55%', scrub: true },
       });
-    }
+    });
     const img = $('.portrait__img');
     if (img && !reduced) {
       gsap.fromTo(img, { yPercent: -6 }, {
