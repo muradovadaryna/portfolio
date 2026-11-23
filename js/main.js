@@ -55,6 +55,67 @@ const AI_CREATIVES = [
 
 
 /* ==========================================================================
+   1c. CASES — shown first in the Work section
+   --------------------------------------------------------------------------
+   title, category, summary   the header of the case
+   goal, idea, did            the three text columns
+   metrics    big numbers that count up on scroll:
+              to      the number to count to
+              from    (optional) number to start counting from
+              before  (optional) text shown before the number, e.g. '2K → '
+              prefix / suffix   text right before / after the number
+              label   small text under the number
+   notes      (optional) results without a number, shown as a list
+   hero       (optional) one wide piece above the grid, e.g. a 16:9 video
+   items      the creatives in the 3-column grid (4:5 by default)
+
+   ▼ Media below are PLACEHOLDERS — replace the file paths with your files. ▼
+   ========================================================================== */
+const CASES = [
+  {
+    title: 'Beliq Wear',
+    summary: 'Fashion brand · 2K → 16K followers, +40% sales',
+    goal: 'Grow an engaged audience and turn followers into customers.',
+    idea: 'Sell the story, not just the clothes. Instead of showing products one by one, I built stories around each collection — where it came from, what inspired it, who it was made for. People bought into the collection before they bought the piece.',
+    did: 'Shoots and a steady stream of video content, collection storytelling in Stories, 100+ influencer collaborations, and a sales script for direct communication with customers.',
+    metrics: [
+      { before: '2K → ', from: 2, to: 16, suffix: 'K', label: 'Instagram followers' },
+      { to: 3, suffix: 'M+', label: 'views across videos and posts' },
+      { prefix: '+', to: 40, suffix: '%', label: 'sales after introducing a sales script and direct customer communication' },
+      { to: 100, suffix: '+', label: 'influencer collaborations' },
+    ],
+    items: [
+      { src: 'assets/cases/beliq/01.webp', alt: 'Beliq Wear creative 1' },
+      { src: 'assets/cases/beliq/02.webp', alt: 'Beliq Wear creative 2' },
+      { src: 'assets/cases/beliq/03.webp', alt: 'Beliq Wear creative 3' },
+    ],
+  },
+  {
+    title: 'Robotic agriculture',
+    summary: 'AgriTech company · 2x trade show leads, +30% followers',
+    goal: 'Make advanced farm robotics feel approachable — so farmers see a helping hand, not a threat.',
+    idea: 'Show the people, not just the machines. Real farmers, real fields, everyday work made easier — technology explained in plain language, so it feels familiar instead of intimidating.',
+    did: 'Video production, social media content and trade show materials — one consistent, human story across online and offline.',
+    metrics: [
+      { to: 2, suffix: 'x', label: 'leads at trade shows' },
+      { prefix: '+', to: 50, suffix: '%', label: 'website inquiries' },
+      { prefix: '+', to: 30, suffix: '%', label: 'social media followers' },
+    ],
+    notes: [
+      'More inbound leads from social media',
+      'Stronger brand recognition in the farming community',
+    ],
+    hero: { type: 'video', src: 'assets/cases/agri/film.mp4', poster: 'assets/cases/agri/film.jpg', ratio: '16:9', alt: 'Robotic agriculture film' },
+    items: [
+      { src: 'assets/cases/agri/01.webp', alt: 'Robotic agriculture creative 1' },
+      { src: 'assets/cases/agri/02.webp', alt: 'Robotic agriculture creative 2' },
+      { src: 'assets/cases/agri/03.webp', alt: 'Robotic agriculture creative 3' },
+    ],
+  },
+];
+
+
+/* ==========================================================================
    2. SITE SETTINGS — links used everywhere on the page
    ========================================================================== */
 const SITE = {
@@ -116,6 +177,14 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
   /** Every piece of work in one flat list: { item, project, pi }.
       `project` is the category; `pi` groups items for the lightbox arrows. */
   const CATEGORIES = [
+    ...CASES.map((c, i) => ({
+      id: `case-${i + 1}`,
+      title: c.title,
+      items: [
+        ...(c.hero ? [{ ratio: '16:9', ...c.hero, hero: true }] : []),
+        ...(c.items || []).map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })),
+      ],
+    })),
     { id: 'social', title: 'Social Media Designs', items: SOCIAL_POSTS.map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })) },
     { id: 'ai', title: 'AI Creatives', items: AI_CREATIVES.map((p) => ({ type: 'image', ratio: '4:5', caption: p.title, ...p })) },
   ];
@@ -240,8 +309,75 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
   function renderCategories() {
     CATEGORIES.forEach((cat, pi) => {
       const host = $(`[data-grid="${cat.id}"]`);
+      const heroHost = $(`[data-grid="${cat.id}-hero"]`);
       if (!host) return;
-      host.innerHTML = ITEMS.map((e, gi) => (e.pi === pi ? itemHTML(e, gi) : '')).join('');
+      host.innerHTML = ITEMS.map((e, gi) => (e.pi === pi && !e.item.hero ? itemHTML(e, gi) : '')).join('');
+      if (heroHost) heroHost.innerHTML = ITEMS.map((e, gi) => (e.pi === pi && e.item.hero ? itemHTML(e, gi) : '')).join('');
+    });
+  }
+
+  /** Case studies: header, big result numbers, goal / idea / what I did, media */
+  function renderCases() {
+    const host = $('[data-cases]');
+    if (!host) return;
+    const total = CASES.length;
+    host.innerHTML = CASES.map((c, i) => {
+      const n = i + 1;
+      const metrics = (c.metrics || []).map((m) => {
+        const full = `${m.before || ''}${m.prefix || ''}${m.to}${m.suffix || ''}`;
+        return `
+          <li class="case__metric" data-reveal>
+            <p class="case__num" aria-hidden="true">${m.before ? `<span class="case__before">${esc(m.before)}</span>` : ''}${esc(m.prefix || '')}<span data-count="${m.to}" data-from="${m.from || 0}">${m.to}</span>${esc(m.suffix || '')}</p>
+            <p class="case__metric-label label"><span class="visually-hidden">${esc(full)} </span>${esc(m.label)}</p>
+          </li>`;
+      }).join('');
+      const notes = (c.notes || []).map((t) => `<li>${esc(t)}</li>`).join('');
+      const col = (label, text) => (text ? `
+            <div class="case__col" data-reveal>
+              <p class="case__col-label label">${label}</p>
+              <p class="case__col-text">${esc(text)}</p>
+            </div>` : '');
+      return `
+        <article class="case" id="case-${n}" aria-labelledby="case-${n}-title">
+          <div class="case__head grid">
+            <p class="case__index label" data-reveal><span>Case ${pad(n)}</span> / ${pad(total)}</p>
+            <h3 class="case__title" id="case-${n}-title" data-split>${richTitle(c.title)}</h3>
+            ${c.summary ? `<p class="case__summary label" data-reveal>${esc(c.summary)}</p>` : ''}
+          </div>
+
+          <div class="case__results">
+            <p class="case__col-label label" data-reveal>The result</p>
+            <ul class="case__metrics" style="--n:${(c.metrics || []).length}">${metrics}</ul>
+            ${notes ? `<ul class="case__notes" data-reveal>${notes}</ul>` : ''}
+          </div>
+
+          <div class="case__story">
+            ${col('The goal', c.goal)}
+            ${col('The idea', c.idea)}
+            ${col('What I did', c.did)}
+          </div>
+
+          ${c.hero ? `<ul class="work-grid work-grid--hero" data-grid="case-${n}-hero"></ul>` : ''}
+          <ul class="work-grid" data-grid="case-${n}"></ul>
+        </article>`;
+    }).join('');
+  }
+
+  /** Case numbers count up once when they scroll into view */
+  function initCaseCounters() {
+    $$('.case__num [data-count]').forEach((el) => {
+      const to = Number(el.dataset.count);
+      const from = Number(el.dataset.from) || 0;
+      if (!hasGSAP || reduced) { el.textContent = to; return; }
+      el.textContent = from;
+      const obj = { v: from };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 88%', once: true,
+        onEnter: () => gsap.to(obj, {
+          v: to, duration: to - from > 20 ? 2.2 : 1.6, ease: 'power3.out', delay: 0.2,
+          onUpdate: () => { el.textContent = Math.round(obj.v); },
+        }),
+      });
     });
   }
 
@@ -877,7 +1013,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
      NUMBERS — count up once
      ====================================================================== */
   function initCounters() {
-    $$('[data-count]').forEach((el) => {
+    $$('.stat [data-count]').forEach((el) => {
       const target = Number(el.dataset.count);
       const stat = el.closest('.stat');
       // Screen readers get the final number straight away
@@ -1201,6 +1337,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
   function init() {
     applySiteLinks();
     buildMarquee();
+    renderCases();
     renderCategories();
     observeImages();
     initLightbox();
@@ -1237,6 +1374,7 @@ const TOOLKIT = ['Adobe Creative Suite', 'Figma', 'CapCut', 'Higgsfield', 'Midjo
     // Scroll animations (top to bottom)
     const playHero = prepareHero();
     initCounters();
+    initCaseCounters();
     initReveals();
     initHeadingReveals();
     initGridReveals();
