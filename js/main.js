@@ -85,14 +85,14 @@ const CASES = [
       { to: 100, suffix: '+', label: 'influencer collaborations' },
     ],
     items: [
-      // Instagram feed screenshots, shown inside phone frames
-      { src: 'assets/cases/beliq/feed-01.webp', ratio: '9:16', phone: true, alt: 'Beliq Wear Instagram feed: neutral loungewear collection' },
-      { src: 'assets/cases/beliq/feed-02.webp', ratio: '9:16', phone: true, alt: 'Beliq Wear Instagram feed: green, orange and white basics' },
-      { src: 'assets/cases/beliq/feed-03.webp', ratio: '9:16', phone: true, alt: 'Beliq Wear Instagram feed: pink and white summer collection' },
+      // Instagram feed screenshots
+      { src: 'assets/cases/beliq/feed-01.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: neutral loungewear collection' },
+      { src: 'assets/cases/beliq/feed-02.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: green, orange and white basics' },
+      { src: 'assets/cases/beliq/feed-03.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: pink and white summer collection' },
       // Videos (Reels) — PLACEHOLDERS: upload the .mp4 files and a still frame (.jpg) for each
-      { type: 'video', src: 'assets/cases/beliq/reel-01.mp4', poster: 'assets/cases/beliq/reel-01.jpg', ratio: '9:16', phone: true, alt: 'Beliq Wear reel 1' },
-      { type: 'video', src: 'assets/cases/beliq/reel-02.mp4', poster: 'assets/cases/beliq/reel-02.jpg', ratio: '9:16', phone: true, alt: 'Beliq Wear reel 2' },
-      { type: 'video', src: 'assets/cases/beliq/reel-03.mp4', poster: 'assets/cases/beliq/reel-03.jpg', ratio: '9:16', phone: true, alt: 'Beliq Wear reel 3' },
+      { type: 'video', src: 'assets/cases/beliq/reel-01.mp4', poster: 'assets/cases/beliq/reel-01.jpg', ratio: '9:16', alt: 'Beliq Wear reel 1' },
+      { type: 'video', src: 'assets/cases/beliq/reel-02.mp4', poster: 'assets/cases/beliq/reel-02.jpg', ratio: '9:16', alt: 'Beliq Wear reel 2' },
+      { type: 'video', src: 'assets/cases/beliq/reel-03.mp4', poster: 'assets/cases/beliq/reel-03.jpg', ratio: '9:16', alt: 'Beliq Wear reel 3' },
     ],
   },
   {
