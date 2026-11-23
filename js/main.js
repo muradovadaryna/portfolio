@@ -86,7 +86,7 @@ const CASES = [
     ],
     items: [
       // Instagram feed screenshots
-      { src: 'assets/cases/beliq/feed-01.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: neutral loungewear collection' },
+      { src: 'assets/cases/beliq/feed-01b.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: black and beige hoodies, ribbed tops and bodysuits' },
       { src: 'assets/cases/beliq/feed-02.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: green, orange and white basics' },
       { src: 'assets/cases/beliq/feed-03.webp', ratio: '9:16', alt: 'Beliq Wear Instagram feed: pink and white summer collection' },
       // Videos (Reels) — PLACEHOLDERS: upload the .mp4 files and a still frame (.jpg) for each
